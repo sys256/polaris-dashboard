@@ -4,6 +4,7 @@
             <div class="buttons">
                 <btn icon="square-medium-outline" @click="handleMinimizeClick"/>
                 <btn :icon="opts.state === 'maximized' ? 'fullscreen-exit' : 'fullscreen'" @click="handleMaximizeClick"/>
+                <btn icon="pin-outline"/>
             </div>
 
             <div ref="title" class="title">

@@ -1,6 +1,6 @@
 {
     "name": "polaris",
-    "version": "0.0.1469",
+    "version": "0.0.1472",
     "description": "Polaris Project",
     "keywords": [
         "vite",
@@ -31,6 +31,7 @@
         "pinia": "^2.2.0",
         "pinia-plugin-persistedstate": "^3.2.1",
         "ress": "^5.0.2",
+        "sass-embedded": "^1.77.8",
         "three": "^0.167.1",
         "ubuntu-fontface": "^0.1.13",
         "vite": "^5.3.5",
