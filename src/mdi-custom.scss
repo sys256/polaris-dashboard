@@ -1,0 +1,37 @@
+@import "../node_modules/@mdi/font/scss/variables";
+@import "../node_modules/@mdi/font/scss/functions";
+//@import "../node_modules/@mdi/font/scss/path";
+//@import "../node_modules/@mdi/font/scss/core";
+@import "../node_modules/@mdi/font/scss/icons";
+@import "../node_modules/@mdi/font/scss/extras";
+@import "../node_modules/@mdi/font/scss/animated";
+
+/*
+i[class^="mdi-"],
+i[class*=" mdi-"] {
+    font-size: 24px;
+    line-height: 1;
+}
+
+i[class^="mdi-"]:before,
+i[class*=" mdi-"]:before {
+    display: inline-block;
+    font: normal normal normal 24px/1 "MDI"; // "Material Design Icons" helyett a saját betöltésű woff2
+    font-size: inherit;
+    text-rendering: auto;
+    line-height: inherit;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+*/
+
+.mdi:before,
+.mdi-set {
+    display: inline-block;
+    font: normal normal normal 24px/1 "MDI";
+    font-size: inherit;
+    text-rendering: auto;
+    line-height: inherit;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
