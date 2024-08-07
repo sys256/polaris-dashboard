@@ -180,7 +180,8 @@ export const useStack = defineStore( 'stack', {
                 storedState: 'normal',
                 title: "",
                 color: '#68a',
-                icon: 'window-maximize'
+                icon: 'window-maximize',
+                pinned: false
             };
             const opts = { ...defaults, ...options };
 
@@ -306,8 +307,12 @@ export const useStack = defineStore( 'stack', {
                 case 'stored':
                     item.state = item.storedState;
                 break;
-
             }
+        },
+
+        togglePinned () {
+            const item = this.items.at( -1 );
+            item.pinned = !item.pinned;
         }
     }
 } );
