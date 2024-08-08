@@ -1,0 +1,5 @@
+// Remember that by limiting the content of your global.scss file to only SCSS
+// variables, mixins, and functions, you ensure efficiency and avoid the
+// pitfall of duplicated styles in the compiled CSS
+
+@forward "variables";

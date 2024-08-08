@@ -1,0 +1,160 @@
+/*********************
+ **  Polaris Style  **
+ *********************/
+
+ :root {
+    font-family: Ubuntu, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+
+    color-scheme: light dark;
+    color: rgba(255, 255, 255, 0.87);
+
+    --c1: #aaa;
+    --c2: #bbb;
+    --c3: #bbb8;
+    background-color: var(--c1);
+    /*opacity: 0.8;*/
+    background-image:
+        linear-gradient(30deg,  var(--c2) 12%, transparent 12.5%, transparent 87%, var(--c2) 87.5%, var(--c2)),
+        linear-gradient(150deg, var(--c2) 12%, transparent 12.5%, transparent 87%, var(--c2) 87.5%, var(--c2)),
+        linear-gradient(30deg,  var(--c2) 12%, transparent 12.5%, transparent 87%, var(--c2) 87.5%, var(--c2)),
+        linear-gradient(150deg, var(--c2) 12%, transparent 12.5%, transparent 87%, var(--c2) 87.5%, var(--c2)),
+        linear-gradient(60deg,  var(--c3) 25%, transparent 25.5%, transparent 75%, var(--c3) 75%,   var(--c3)),
+        linear-gradient(60deg,  var(--c3) 25%, transparent 25.5%, transparent 75%, var(--c3) 75%,   var(--c3));
+    background-size: 20px 35px;
+    background-position: 0 0, 0 0, 10px 18px, 10px 18px, 0 0, 10px 18px;
+    background-repeat:repeat;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+    font-weight: 500;
+    color: #646cff;
+    text-decoration: inherit;
+}
+
+a:hover {
+    color: #535bf2;
+}
+
+body {
+    /*margin: 0;*/
+    display: flex;
+    place-items: center;
+    min-width: 320px;
+    min-height: 100vh;
+}
+
+h1 {
+    font-size: 3.2em;
+    line-height: 1.1;
+}
+
+/*#app {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+}*/
+
+.logo {
+    height: 6em;
+    padding: 1.5em;
+    will-change: filter;
+    transition: filter 300ms;
+}
+
+.logo:hover {
+    filter: drop-shadow(0 0 2em #646cffaa);
+}
+
+.logo.vanilla:hover {
+    filter: drop-shadow(0 0 2em #f7df1eaa);
+}
+
+.read-the-docs {
+    color: #888;
+}
+
+/*button {
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: #1a1a1a;
+    cursor: pointer;
+    transition: border-color 0.25s;
+}
+
+button:hover {
+    border-color: #646cff;
+}
+
+button:focus,
+button:focus-visible {
+    border-color: transparent !important;
+}*/
+
+/*@media (prefers-color-scheme: light) {
+    :root {
+        color: #213547;
+        background-color: #ffffff;
+    }
+
+    a:hover {
+        color: #747bff;
+    }
+
+    button {
+        background-color: #f9f9f9;
+    }
+}*/
+
+#info {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    font-size: 24px;
+    color: white;
+    margin: 8px;
+    font-family: Menlo, monospace;
+}
+
+.lil-gui {
+	--background-color:       #222;
+    --text-color:             #ccb;
+    --title-background-color: #456;
+    --title-text-color:       #abc;
+	--widget-color:           #444;
+    --hover-color:            #555;
+    --focus-color:            #666;
+    --number-color:           #2cf;
+    --string-color:           #ad3;
+
+    --font-family:            -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    --font-family-mono:       Menlo, Monaco, Consolas, "Droid Sans Mono", monospace;
+    --font-size:              14px;
+    --input-font-size:        14px;
+    --padding:                10px;
+    --spacing:                4px;
+    --widget-height:          22px;
+    --title-height:           30px;
+    --slider-knob-width:      4px;
+	--slider-input-width:     30%;
+	--color-input-width:      30%;
+	--slider-input-min-width: 50px;
+	--color-input-min-width:  50px;
+    --folder-indent:          13px;
+    --widget-border-radius:   4px;
+}
+
+.lil-gui * {
+    text-decoration: none !important;
+}
