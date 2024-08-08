@@ -1,3 +1,6 @@
+
+/** main.js */
+
 import { createApp, markRaw }  from 'vue';
 
 import Scene    from '@/world/Scene.js';
