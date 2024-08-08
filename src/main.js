@@ -1,5 +1,8 @@
 
-/** main.js */
+/**
+ * main.js
+ *
+ */
 
 import { createApp, markRaw }  from 'vue';
 
