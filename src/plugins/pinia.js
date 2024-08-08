@@ -145,7 +145,7 @@ export const useStack = defineStore( 'stack', {
         items:     [], // Deck
 
         nextKey:   0,  // Unique key
-        activeIdx: 0,  // Az aktív card. A pinned card feature bevezetése óta nem biztos, hogy a deck legutolsó eleme.
+        activeIdx: 0,  // Az aktív card. A pinned card feature bevezetése óta nem biztos, hogy a deck legfelső eleme.
 
         width:     0,  // Browser inner width
         height:    0   // Browser inner height
