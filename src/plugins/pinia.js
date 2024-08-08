@@ -240,16 +240,6 @@ export const useStack = defineStore( 'stack', {
         },
 
         /**
-         * A stack aljára mozgatja az idx-edik card-ot
-         *
-         * @param {Integer} idx
-         */
-        sendToBack ( idx ) {
-            const slice = this.items.splice( idx, 1 );
-            this.items.unshift( slice[ 0 ] );
-        },
-
-        /**
          * A maximized cardokat normalra állítja. Az összes normal kártyát a
          * bal felső sarokba rendezi úgy, hogy minden header olvasható legyen.
          * A minimized card-ok koordinátáit egymást fedve állítja a bal felső
