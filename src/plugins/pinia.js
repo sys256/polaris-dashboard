@@ -145,7 +145,7 @@ export const useStack = defineStore( 'stack', {
         items:     [], // Deck
 
         nextKey:   0,  // Unique key
-        activeIdx: 0,  // Az aktív card. A pinned card feature bevezetése óta nem biztos, hogy a deck legfelső eleme.
+        activeIdx: -1, // Az aktív card. A pinned card feature bevezetése óta nem biztos, hogy a deck legfelső eleme.
 
         width:     0,  // Browser inner width
         height:    0   // Browser inner height
@@ -203,10 +203,14 @@ export const useStack = defineStore( 'stack', {
         },
 
         /**
-         * Topmost card eltávolítása a stackből
+         * Active card eltávolítása a stackből
          */
         removeCard () {
-            /* const item = */ this.items.pop();
+            const item = this.items.at( this.activeIdx );
+            if ( item === undefined ) return;
+
+            this.items.splice( this.activeIdx, 1 ); // OLD: this.items.pop();
+            this.activeIdx = this.items.length - 1; // Ha a stack üressé vált, akkor -1;
 
             if ( this.items.length === 0 ) this.nextKey = 0;
         },
