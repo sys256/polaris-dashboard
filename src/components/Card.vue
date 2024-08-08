@@ -70,9 +70,9 @@
             width     () { return this.opts.state === 'maximized' ? `${ this.stack.width }px` : `${ this.opts.w }px`; },                        // Content width
             height    () { return this.opts.state === 'maximized' ? `${ this.stack.height - 45 * 2 - 45 * 2 }px` : `${ this.opts.h - 45 * 2 }px`; }, // Content height
 
-            z         () { return 100 + this.idx; },                           // Card z-index
-            color     () { return this.opts.color; },                          // Header and footer color
-            active   () { return this.idx === this.stack.items.length - 1; }, // Ez a legfelső card a stackben?
+            z         () { return 100 + this.idx; },                    // Card z-index
+            color     () { return this.opts.color; },                   // Header and footer color
+            active    () { return this.idx === this.stack.activeIdx; }, // Ez a legfelső card a stackben?
 
             maximized () { return this.opts.state === 'maximized' }
         },

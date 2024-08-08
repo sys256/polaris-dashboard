@@ -1,5 +1,5 @@
 <template>
-    <div class="mini" :class="{ topmost: topmost, minimized: minimized }" @click="handleClick" v-show="minimized">
+    <div class="mini" :class="{ active: active, minimized: minimized }" @click="handleClick" v-show="minimized">
         <icon class="mini-icon" :name="opts.icon"/>
         <div>{{ opts.title }}</div>
     </div>
@@ -24,7 +24,7 @@
             ...mapStores( useStack ),
 
             color     () { return this.opts.color; },
-            topmost   () { return this.opts.key === this.stack.items[ this.stack.items.length - 1 ].key; },
+            active    () { return this.idx === this.stack.activeIdx; },
             minimized () { return this.opts.state === 'minimized' }
         },
 
@@ -76,7 +76,7 @@
         flex: 0 0 24px;
     }
 
-    .mini.topmost {
+    .mini.active {
         color: #ff0;
     }
 
