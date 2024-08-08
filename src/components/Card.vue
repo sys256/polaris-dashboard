@@ -1,5 +1,5 @@
 <template>
-    <div class="card" oncontextmenu="event.preventDefault()" v-show="opts.state !== 'minimized'" :class="{ topmost: topmost, maximized: maximized }">
+    <div class="card" oncontextmenu="event.preventDefault()" v-show="opts.state !== 'minimized'" :class="{ active: active, maximized: maximized }">
         <div class="header">
             <div class="buttons">
                 <btn icon="square-medium-outline" @click="handleMinimizeClick"/>
@@ -24,7 +24,7 @@
                 <p>state: {{ opts.state }}</p>
                 <p>color: {{ opts.color }}</p>
                 <p>key: {{ opts.key }}</p>
-                <p>{{ topmost }}</p>
+                <p>{{ active }}</p>
             </div>
         </div>
 
@@ -39,7 +39,7 @@
         </div>
 
         <transition>
-            <div ref="overlay" class="overlay" v-show="!topmost" :class="{ blocking: !topmost }"/>
+            <div ref="overlay" class="overlay" v-show="!active" :class="{ blocking: !active }"/>
         </transition>
     </div>
 </template>
@@ -72,7 +72,7 @@
 
             z         () { return 100 + this.idx; },                           // Card z-index
             color     () { return this.opts.color; },                          // Header and footer color
-            topmost   () { return this.idx === this.stack.items.length - 1; }, // Ez a legfelső card a stackben?
+            active   () { return this.idx === this.stack.items.length - 1; }, // Ez a legfelső card a stackben?
 
             maximized () { return this.opts.state === 'maximized' }
         },
@@ -214,7 +214,7 @@
         border-bottom: var(--card-divider);
         background-color: var(--card-color);
     }
-    .card.topmost .header {
+    .card.active .header {
         background-color: v-bind(color);
     }
 
@@ -273,7 +273,7 @@
         border-top: var(--card-divider);
         background-color: var(--card-color);
     }
-    .card.topmost .footer {
+    .card.active .footer {
         background-color: v-bind(color);
     }
 

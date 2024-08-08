@@ -190,7 +190,16 @@ export const useStack = defineStore( 'stack', {
             if ( opts.y === 'center' ) opts.y = Math.floor( ( this.height - opts.h ) / 2 );
 
             opts.key = this.nextKey++;
-            this.items.push( opts );
+
+            // Find unpinned topmost
+            let idx = 0;
+            for ( const item of this.items ) {
+                if ( item.pinned ) break;
+                idx++;
+            }
+            this.items.splice( idx, 0, opts ); // OLD: this.items.push( opts );
+
+            this.activeIdx = idx;
         },
 
         /**
