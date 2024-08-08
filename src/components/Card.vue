@@ -255,8 +255,8 @@
 
     .viewport {
         background-color: var(--card-color);
-        min-width: 240px;
-        min-height: 150px;
+        min-width: 320px;
+        min-height: 180px;
         width: v-bind(width);
         height: v-bind(height);
         display: flex;
