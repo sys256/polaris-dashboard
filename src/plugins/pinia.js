@@ -274,12 +274,14 @@ export const useStack = defineStore( 'stack', {
         },
 
         /**
-         * A stack topmost elemét az (x, y) helyre pozicionálja
+         * A stack active elemét az (x, y) helyre pozicionálja
          * @param {Integer} x
          * @param {Integer} y
          */
         setPosition ( x, y ) {
-            const item = this.items.at( -1 );
+            const item = this.items.at( this.activeIdx );
+            if ( item === undefined ) return;
+
             item.x = x;
             item.y = y;
         },
