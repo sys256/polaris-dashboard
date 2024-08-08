@@ -301,12 +301,13 @@ export const useStack = defineStore( 'stack', {
         },
 
         /**
-         * Megváltoztatja a topmost card state-et
+         * Megváltoztatja az active card state-jét
          *
          * @param {String} state - maximized|normal|minimized|stored
          */
         setState ( state ) {
-            const item = this.items.at( -1 );
+            const item = this.items.at( this.activeIdx );
+            if ( item === undefined ) return;
 
             switch ( state ) {
                 // Maximize from normal / Normal from maximized
@@ -336,8 +337,13 @@ export const useStack = defineStore( 'stack', {
             }
         },
 
+        /**
+         * Negálja az active card pinned állapotát.
+         */
         togglePinned () {
-            const item = this.items.at( -1 );
+            const item = this.items.at( this.activeIdx );
+            if ( item === undefined ) return;
+
             item.pinned = !item.pinned;
         }
     }
