@@ -191,7 +191,7 @@ export const useStack = defineStore( 'stack', {
 
             opts.key = this.nextKey++;
 
-            // Find unpinned topmost
+            // Find last unpinned
             let idx = 0;
             for ( const item of this.items ) {
                 if ( item.pinned ) break;
@@ -217,8 +217,26 @@ export const useStack = defineStore( 'stack', {
          * @param {Integer} idx
          */
         bringToFront ( idx ) {
-            const slice = this.items.splice( idx, 1 );
-            this.items.push( slice[ 0 ] ); // { ...slice[ 0 ] }
+            const item = this.items.at( idx );
+            if ( item === undefined ) return;
+
+            this.items.splice( idx, 1 ); // Remove from old position
+
+            if ( item.pinned ) {
+                this.items.push( item );
+                this.activeIdx = this.items.length - 1;
+
+            } else {
+                // Find last unpinned
+                let i = 0;
+                for ( const item of this.items ) {
+                    if ( item.pinned ) break;
+                    i++;
+                }
+
+                this.items.splice( i, 0, item );
+                this.activeIdx = i;
+            }
         },
 
         /**
