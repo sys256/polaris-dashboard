@@ -287,13 +287,15 @@ export const useStack = defineStore( 'stack', {
         },
 
         /**
-         * Átméretezi a stack topmost elemét
+         * Átméretezi a stack active elemét
          *
          * @param {Integer} w - Szélesség
          * @param {Integer} h - Magasság
          */
         setSize ( w, h ) {
-            const item = this.items.at( -1 );
+            const item = this.items.at( this.activeIdx );
+            if ( item === undefined ) return;
+
             item.w = w;
             item.h = h;
         },
