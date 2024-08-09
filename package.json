@@ -26,16 +26,17 @@
     },
     "devDependencies": {
         "@mdi/font": "^7.4.47",
+        "@tweenjs/tween.js": "^25.0.0",
         "@vitejs/plugin-vue": "^5.1.2",
         "meslo": "^1.0.0",
-        "pinia-plugin-persistedstate": "^3.2.1",
         "pinia": "^2.2.1",
+        "pinia-plugin-persistedstate": "^3.2.1",
         "ress": "^5.0.2",
         "sass-embedded": "^1.77.8",
         "three": "^0.167.1",
         "ubuntu-fontface": "^0.1.13",
         "vite": "^5.4.0",
-        "vue-router": "^4.4.3",
-        "vue": "^3.4.36"
+        "vue": "^3.4.36",
+        "vue-router": "^4.4.3"
     }
 }
